@@ -6,6 +6,15 @@
 
 Now all we need to do is initialize a thread pool and call our spawn function (see _benchmark.js_).s
 
+### Usage
+```
+// in worker scope
+// function expensive(num) { ... }
+
+const threadPool = createThreadPool('thread.js')
+Promise.all(nums.map(num => spawn(threadPool.worker, 'expensive', num)))
+```
+
 ## Run Benchmark
 
 - start local server
